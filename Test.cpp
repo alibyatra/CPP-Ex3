@@ -1,0 +1,115 @@
+#include "solver.hpp"
+#include <iostream>
+#include <stdlib.h> /* srand, rand */
+#include "doctest.h"
+
+using namespace std;
+using solver::solve, solver::RealVariable, solver::ComplexVariable;
+
+TEST_CASE("REALVAR FUNCTIONS ")
+{
+    RealVariable x;
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+    CHECK(solve(x-2== 10) == 12);
+    CHECK(solve(x + 10 == 3) == -7);
+    CHECK(solve(100*x - 290 == 10) == 3);
+    CHECK((solve(x + 12 == 20)) == 8);
+    CHECK(solve(x - 4 == 8) == 12);
+    CHECK(solve(x / 3 == 9) == 27);
+}
+
