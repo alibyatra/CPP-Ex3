@@ -7,44 +7,38 @@
 using namespace std;
 using namespace solver;
 
-double solver::solve (RealVariable x)
+double solver:: solve (RealVariable x) 
 {
 	if (x.a==0 && x.b==0 && x.c!=0) 
 	{ 
-		throw runtime_error("Error");
-	}
-	if ((x.a!=1 && x.b==0 && x.c==0) || (x.a==0 && x.b!=0 && x.c==0))
+		throw runtime_error("Error"); 
+	} 
+	if ((x.a!=0 && x.b==0 && x.c==0) || (x.a==0 && x.b!=0 && x.c==0))
 	return 0;
-	else if (x.a!=0 && x.b!=0 && x.c==0)
-	{
-		return ((x.a / x.b) * (-1));
+	double dis = (x.b*x.b) + (-4 * x.a * x.c);
+	if (dis < 0 )
+	{ 
+		throw runtime_error("Error, the discriminant is negative"); 
 	}
-	else if ((x.a==0 && x.b!=0 && x.c!=0) || (x.a!=0 && x.b==0 && x.c!=0) || (x.a!=0 && x.b!=0 && x.c!=0))
-	{
-		double dis = (x.b *x.b) + (-4 * x.a * x.c);
-		if (dis<0)
-		throw runtime_error("Error, the discriminant is negative");
-		return (-x.b + sqrt(dis))/(x.a * 2);
-	}
+    if ( x.a == 0 ) 
+	return (-1*x.c)/x.b;
+	else
+		return (-1*x.b + sqrt(dis))/(2*x.a);
 }
 
-complex<double> solver::solve (ComplexVariable x)
+complex<double> solver:: solve (ComplexVariable x)
 {
 	if (x.a==0.0 && x.b==0.0 && x.c!=0.0) 
 	{ 
-		throw runtime_error("Error");
-	}
-	if ((x.a!=1.0 && x.b==0.0 && x.c==0.0) || (x.a==0.0 && x.b!=0.0 && x.c==0.0))
+		throw runtime_error("Error"); 
+	} 
+	if ((x.a!=0.0 && x.b==0.0 && x.c==0.0) || (x.a==0.0 && x.b!=0.0 && x.c==0.0))
 	return 0;
-	else if (x.a!=0.0 && x.b!=0.0 && x.c==0.0)
-	{
-		return ((x.a / x.b) * (-1.0));
-	}
-	else if ((x.a==0.0 && x.b!=0.0 && x.c!=0.0) || (x.a!=0.0 && x.b==0.0 && x.c!=0.0) || (x.a!=0.0 && x.b!=0.0 && x.c!=0.0))
-	{
-		complex<double> dis = (x.b *x.b) + ((-4.0) * x.a * x.c);
-		return (-x.b + sqrt(dis))/(x.a * 2.0);
-	}
+	complex<double> dis = (x.b*x.b) + (-4.0 * x.a * x.c);
+    if ( x.a == 0.0 ) 
+	return (-1.0*x.c)/x.b;
+	else
+		return (-1.0*x.b + sqrt(dis))/(2.0*x.a);
 }
 
 RealVariable solver::operator+(const double x, RealVariable y)
@@ -139,7 +133,7 @@ RealVariable solver::operator^(RealVariable y, const int x)
 	if (x==1)
 	return y;
 	if (x==2)
-	return RealVariable(y.a*y.a, 2* y.a* y.b, y.c* y.c);
+	return RealVariable((y.b*y.b)+y.a, 0, y.c);
 	else
 	throw runtime_error("Error");
 }
@@ -209,21 +203,21 @@ ComplexVariable solver::operator/(ComplexVariable x, ComplexVariable  y)
 }
 ComplexVariable solver::operator==(complex<double> y, ComplexVariable x)
 {
-return ComplexVariable(x.a, x.b, x.c+(std::complex<double>(-1)*y));
+return ComplexVariable(x.a, x.b, x.c+((-1.0)*y));
 }
 ComplexVariable solver::operator==(ComplexVariable x, complex<double> y)
 {
-    return ComplexVariable(x.a, x.b, x.c+(std::complex<double>(-1)*y));
+    return ComplexVariable(x.a, x.b, x.c+((-1.0)*y));
 }
 ComplexVariable solver::operator==(ComplexVariable x, ComplexVariable  y)
 {
 	ComplexVariable z(x.a, x.b, x.c);
 	if (y.a!=0.0) 
-	z.a = x.a+(std::complex<double>(-1)*y.a);
+	z.a = x.a+((-1.0)*y.a);
 	if (y.b!=0.0) 
-	z.b = x.b+(std::complex<double>(-1)*y.b);
+	z.b = x.b+((-1.0)*y.b);
 	if (y.c!=0.0) 
-	z.c = x.c+(std::complex<double>(-1)*y.c);
+	z.c = x.c+((-1.0)*y.c);
 	return z;
 }
 ComplexVariable solver::operator^(ComplexVariable x, int y)
@@ -233,7 +227,7 @@ ComplexVariable solver::operator^(ComplexVariable x, int y)
 	if (y==1)
 	return x;
 	if (y==2)
-	return ComplexVariable(x.a*x.a, 2.0* x.a* x.b, x.c* x.c);
+	return ComplexVariable((x.b*x.b)+x.a, 0, x.c);
 	else
 	throw runtime_error("Error");
 }

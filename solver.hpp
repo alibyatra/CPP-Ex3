@@ -14,7 +14,7 @@ namespace solver
 
 		friend RealVariable operator+(const double x, RealVariable y);
 		friend RealVariable operator+(RealVariable y, const double x);
-		friend RealVariable operator+(RealVariable y, RealVariable  x);
+		friend RealVariable operator+(RealVariable y, RealVariable x);
 
 		friend RealVariable operator-(const double x, RealVariable y);
 		friend RealVariable operator-(RealVariable y, const double x);
@@ -62,8 +62,7 @@ namespace solver
 		
 		friend ComplexVariable operator^(ComplexVariable x, int y);
 	};
-
-
+	
 	double solve(RealVariable x);
 	complex<double> solve(ComplexVariable x);  
 };
